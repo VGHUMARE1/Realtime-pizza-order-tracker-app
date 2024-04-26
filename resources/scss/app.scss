@@ -1,0 +1,348 @@
+@import "variables";
+
+body {
+    font-family: 'Lato', sans-serif;
+    -wekit-font-smoothing: antialiased;
+    font-weight: 400;
+
+}
+
+.navbar {
+    color: black;
+    background-color: white;
+
+    a {
+        color: black;
+        text-decoration: none;
+        padding-left: 1rem;
+    }
+
+    .container-fluid {
+
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+    }
+
+    .collapse {
+        margin-left: 50%;
+
+        .nav-link {
+            :hover {
+                color: $primary;
+            }
+        }
+
+        .card-img {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            background-color: $primary;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border: none;
+            border-radius: 2rem;
+            width: 4rem;
+            height: 2.5rem;
+            color: white;
+            margin-left: 1rem;
+
+            &:hover {
+                background-color: $primary-hover;
+            }
+        }
+
+    }
+
+}
+
+
+
+
+section {
+    .section1 {
+        display: flex;
+        flex-direction: row;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
+        background-color: $secondary;
+
+        .section1-left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                font-weight: lighter;
+                font-size: 0.9rem;
+
+            }
+
+            h1 {
+                font-weight: bold;
+            }
+
+        }
+
+        .section1-left {
+            width: 50%;
+        }
+    }
+
+
+
+    .section2 {
+
+
+        .card {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 13rem;
+            }
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-self: baseline;
+
+                .card-text {
+                    margin-top: 1rem;
+                }
+
+                .btn-add {
+                    background-color: white;
+                    border: 2px $primary solid;
+                    padding: 0.5rem 1rem;
+                    color: black;
+                    border-radius: 3rem;
+                    margin-left: 2rem;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // empty card
+    .section3 {
+        width: 100%;
+        margin: 0% !important;
+        background-color: $secondary;
+
+        .emptycard {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            .text-cardEmpty {
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .card-heading {
+                    font-weight: 900;
+                    font-size: 1.5rem;
+                }
+
+                .card-para {
+                    color: $gray;
+                }
+
+            }
+
+            .img-cardEmpty {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                // height: 15rem;
+                img {
+                    height: 20rem;
+                    margin-bottom: 2rem;
+                }
+
+            }
+
+
+
+        }
+
+        // card
+        .card-item-list {
+            width: 100%;
+            margin: auto;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+
+            .heading {
+                padding-bottom: 1.5rem;
+
+                img {
+                    height: 2rem;
+                    padding-right: 1rem;
+                }
+            }
+
+            .list {
+                .item {
+                    display: flex;
+
+                    padding-top: 2rem;
+
+                    img {
+                        height: 5.5rem;
+                        padding-right: 2rem;
+                    }
+
+                    .containt {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+
+            .placeorder {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                align-items: end;
+                padding-right: 4rem;
+
+                .total {
+                    font-weight: 800;
+                    padding-bottom: 2rem;
+                }
+            }
+        }
+
+    }
+
+}
+
+.btn {
+    background-color: $primary;
+    border: none;
+    border-radius: 4rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    color: white;
+
+    &:hover {
+        background-color: $primary-hover;
+    }
+
+}
+
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: $primary;
+        margin-left: 2rem;
+        padding-top: 0.5rem;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+}
+
+
+
+// Alert message 
+.alert{
+    width: 50%;
+    margin: auto;
+}
+
+
+.myOrders{
+  background-color: $secondary;
+
+}
+
+.flash{
+    background-color: $secondary;
+}
+
+
+.track-order{
+
+
+    .dot{
+        height: 7px;
+        width: 7px;
+        background-color: black;
+        border-radius: 50%;
+    }
+    .line{
+        height: 6rem;
+        width: 0.125rem;
+        background-color: black;
+    }
+}
+
+.step-completed {
+    .status{
+        color: $gray;
+    }
+    .img{
+        color: $gray;
+        opacity: 0.4;
+    }
+    .dot{
+        background-color: $gray;
+    }
+    .line{
+        background-color: $gray;
+    }
+}
+
+.current{
+    .status{
+        color: $primary;
+    }
+    .img{
+        color: $primary;
+        
+    }
+    .dot{
+        background-color:  $primary;
+    }
+   
+}
+
+
+
+
+

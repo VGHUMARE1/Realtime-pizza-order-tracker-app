@@ -1,0 +1,38 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="register container col-sm-6 col-lg-4 col-md-5 offset-4 border mt-5"
+        style="background-color: rgba(249, 247, 247, 0.4); ">
+        <h3 class=" mb-5 offset-5">Register</h3>
+        <div>
+            <form action="/user/register" method="POST" novalidate class="needs-validation">
+
+                <div class="mb-4 offset-1 ">
+                    <label for="username" class="col-form-label pl-3">Username :</label>
+                    <div class="col-11">
+                        <input type="text" class="form-control" id="username" name="username" required placeholder="Enter Username">
+                        <div class="invalid-feedback">Please enter valid username</div>
+                    </div>
+                </div>
+                <div class="mb-4 offset-1 ">
+                    <label for="email" class="col-form-label pl-3">Email :</label>
+                    <div class="col-11">
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter Email">
+                        <div class="invalid-feedback">Please enter valid email</div>
+                    </div>
+                </div>
+                
+
+                <div class="mb-4 offset-1">
+                    <label for="password" class="col-form-label pl-3">Password :</label>
+                    <div class="col-11">
+                        <input type="password" class="form-control" id="password" name="password" required placeholder="************">
+                        <div class="invalid-feedback">Please enter valid username</div>
+                    </div>
+                </div>
+                <div class="button-section mb-5">
+                <button class="btn ">Register</button>
+                <a href="/user/login">already registered ?</a>
+            </div>
+            </form>
+        </div>
+    </div>

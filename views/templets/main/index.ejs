@@ -1,0 +1,40 @@
+<% layout('/layouts/boilerplate') -%>
+    <section>
+        <div class="section1">
+            <div class="section1-left">
+                <p><i>Are you hungry ?</i></p>
+                <h1>Don't Wait !</h1>
+                <button class="btn">Order Now</button>
+            </div>
+            <div class="section1-right">
+                <img src="/images/pizza.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section2">
+            <div class=" container card-pizza pt-5">
+                <div class="row  ">
+                    <% for(let pizza of pizzas) {%>
+                    <div class="card col-12 col-sm-6  col-md-4  col-lg-3 pb-5 " style="width: 15rem;">
+                        <img class="card-img-top" src="/images/<%= pizza.image %>" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= pizza.name %></h5>
+                            <p class="card-text"><%= pizza.size.toUpperCase() %></p>
+                            <div class="ml-3">
+                               
+                                <form action="/card/<%= pizza._id %>/add" method="post">
+                                    <span><b>&#8377 <%= pizza.price %></b></span>
+                               <button class="btn-add" >+&nbsp;Add</button> 
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+
+        </div>
+
+    </section>

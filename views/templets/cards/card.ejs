@@ -1,0 +1,93 @@
+
+<% layout('/layouts/boilerplate') -%>
+
+
+    <section>
+        <div class="section3">
+           <% if(!cardItems) {%>
+                <div class="emptycard">
+
+                    <div class="text-cardEmpty">
+                        <p class="card-heading"><b>Card Empty &#128577</b></p>
+                        <p class="card-para">You probably haven't ordered a pizza yet. <br> To order a pizza go to the
+                            main page.</p>
+                    </div>
+                    <div class="img-cardEmpty">
+                        <img src="images/empty-cart.png" alt="empty-cart">
+                        <a href="/"><button class="btn">Go Back</button></a>
+                    </div>
+                </div>
+               <% } else{%>
+
+
+
+
+                    <div class="card-item-list container row ">
+                        <div class="heading border-bottom col-8 "><img src="/images/cart-black.png" alt="card img">Order
+                            summary</div>
+
+                       <% for(let item of cardItems.items) {%>
+                            <div class="list col-8 ">
+                                <div class="item">
+                                    <div class="img"><img src="/images/pizza.png" alt="img pizza"></div>
+                                    <div class="containt">
+                                        <div>
+                                            <p>
+                                               <%= item.name %>
+                                            </p>
+                                            <p>
+                                                <%= item.size.toUpperCase() %>
+                                            </p>
+                                        </div>
+                                        <div><%= item.quntity %>pcs</div>
+                                        <div>&#8377 <%= item.price %>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                           <% } %>
+
+                                <div class="placeorder">
+                                    <div class="total"> Total = &#8377 <%= cardItems.totalPrice %> </div>
+                                    <div class="form">
+                                        <% if(currUser) {%>
+                                        <form action="/order" method="post" novalidate class="needs-validation">
+
+                                            <div class="mb-4  ">
+                                                <label for="address" class="col-form-label pl-3">Address :</label>
+                                                <div>
+                                                    <textarea name="address" id="address" cols="30" rows="2"
+                                                        class="form-control"></textarea>
+                                                    <div class="invalid-feedback">Please enter correct address</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-4 ">
+                                                <label for="phonenumber" class="col-form-label pl-3">Phone Number
+                                                    :</label>
+                                                <div>
+                                                    <input type="number" class="form-control" id="phonenumber"
+                                                        name="phonenumber" required>
+                                                    <div class="invalid-feedback">Please enter valid Phone Number
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" button-section mb-5 ">
+                                                <button class="btn  ">Place Order</button>
+
+                                            </div>
+                                        </form>
+                                        <% }else{ %>
+                                            <div class=" button-section mb-5 ">
+                                                <a href="/user/login"><button class="btn  ">Login to Continue</button></a>
+
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                </div>
+                    </div>
+             <% } %>
+        </div>
+
+    </section>

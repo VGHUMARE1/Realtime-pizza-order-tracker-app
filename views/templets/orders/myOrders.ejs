@@ -1,0 +1,47 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <section class="myOrders ">
+        <% if(orders && orders.length) {%>
+            <div class="d-flex flex-column justify-content-center align-items-center align-self-center w-100 pb-5">
+                <div class="heading  col-sm-12 col-md-10 col-lg-8 m-auto pt-5 pb-3 "><b>All Orders</b></div>
+                <div class="col-sm-12 col-md-10 col-lg-8 m-auto">
+                    <table class="table table-bordered table-hover table-light">
+                        <thead>
+                            <tr>
+
+                                <th>Order </th>
+                                <th>Address</th>
+                                <th>Placed At</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let order of orders){%>
+
+                                <tr>
+
+                                    <td>
+                                        <a href="/order/<%= order._id %>/status"><%=order._id%></a>
+                                    </td>
+                                    <td>
+                                        <%= order.address %>
+                                    </td>
+                                    <td>
+                                        <%=order.orderAt.toString().split(" ").slice(0,5).join(" ")%>
+                                    </td>
+                                    <td>
+                                        <%=order.status%>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <% }else{ %>
+                <div>
+
+                </div>
+                <% } %>
+
+    </section>

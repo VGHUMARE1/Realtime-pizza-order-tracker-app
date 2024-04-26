@@ -1,0 +1,34 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <div class="singin container col-sm-6 col-lg-4 col-md-5 border p-3 mb-5 offset-4 mt-5 ms-auto"
+        style="background-color: rgba(249, 247, 247, 0.4); ">
+        <h3 class=" mb-5 offset-5">Log In</h3>
+        <div>
+            <form action="/user/login" method="POST"  class="needs-validation" novalidate>
+
+                <div class="mb-4 offset-1 ">
+                    <label for="username" class="col-form-label pl-3">Username :</label>
+                    <div class="col-11">
+                        <input type="text" class="form-control" id="username" name="username" required
+                            placeholder="Enter Username">
+                        <div class="invalid-feedback">Please enter valid username</div>
+                    </div>
+                </div>
+
+
+
+                <div class="mb-4 offset-1">
+                    <label for="password" class="col-form-label pl-3">Password :</label>
+                    <div class="col-11">
+                        <input type="password" class="form-control" id="password" name="password" required
+                            placeholder="************">
+                        <div class="invalid-feedback">Please enter valid username</div>
+                    </div>
+                </div>
+                <div class="button-section mb-5">
+                    <button class="btn ">Log In</button>
+                    <a href="/user/register">not registered yet ?</a>
+                </div>
+            </form>
+        </div>
+    </div>

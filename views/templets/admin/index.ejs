@@ -1,0 +1,88 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <section class="index-admin">
+        <input type="text" hidden value="<%= currUser  %>" id="admin">
+        <input type="text" hidden value="<%= JSON.stringify(orders) %>" id="orderAdmin">
+        <div class="ml-5 mr-5 pl-5 pr-5">
+            <table class="table table-bordered table-hover table-light ">
+                <thead>
+                    <tr>
+                        <th>Orders</th>
+                        <th>Customer</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th>Placed at</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <% for(let order of orders){ %>
+                        <tr>
+                            <td class="">
+                                <p>
+                                    <%= order._id %>
+                                </p>
+                                <% for(let item of order.items){%>
+                                    <%= item.name %> &nbsp; <%=item.quntity %> <br>
+                                            <% } %>
+                            </td>
+                            <td>
+                                <%= order.owner[0].username %>
+                            </td>
+                            <td>
+                                <%= order.address %>
+                            </td>
+                            <td>
+                                <div class="Status">
+                                    <form action="/order/<%= order._id %>/status" method="post">
+                                        <input type="text" value="<%= order._id %>" name="orderId" hidden>
+                                        <label for="status">Status : </label>
+                                        <select name="status" id="status" ${ onchange="this.form.submit()" }>
+                                            <option value="Order Placed" <%=order.status==="Order Placed" ? 'selected'
+                                                :"" %>>Order Placed</option>
+                                            <option value="Confirmed" <%=order.status==="Confirmed" ? 'selected' : "" %>
+                                                >Confirmed</option>
+                                            <option value="Preparation" <%=order.status==="Preparation" ? 'selected'
+                                                : "" %>
+                                                >Preparation</option>
+                                            <option value="Out for delevary" <%=order.status==="Out for delevary"
+                                                ? 'selected' : "" %>>Out for delevary</option>
+                                            <option value="Delivered" <%=order.status==="Delivered" ? 'selected' : "" %>
+                                                >Delivered</option>
+                                            <option value="Cancelled" <%=order.status==="Cancelled" ? 'selected' : "" %>
+                                                >
+                                                Cancelled</option>
+
+
+
+                                        </select>
+                                    </form>
+                                </div>
+                            </td>
+                            <td>
+                                <%= order.orderAt.toString().split(" ").slice(0,5).join(" ") %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <script type=" text/javascript" src="/socket.io/socket.io.js">
+                                    </script>
+
+                                    <script>
+                                        let orders = document.getElementById('orderAdmin').value;
+                                        orders = JSON.parse(orders)
+
+                                        const socket = io();
+                                        console.log(orders);
+                                        socket.emit('join', 'adminRoom');
+                                        socket.on('orderPlaced', (data) => {
+
+                                            orders.unshift(data);
+                                            console.log(orders);
+                                            
+                                        })
+                                        
+
+
+                                    </script>
+    </section>

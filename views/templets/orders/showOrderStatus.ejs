@@ -1,0 +1,83 @@
+<% layout('/layouts/boilerplate') -%>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+
+    <script>
+
+
+    </script>
+    <section class="track-order pt-5">
+        <input id="hiddenInput" type="hidden" value="<%= JSON.stringify(order) %>">
+        <div class="col-sm-11 col-md-7 col-lg-5 m-auto">
+            <div class="d-flex justify-content-between align-items-center w-100 pb-5 pl-3">
+                <p class="h5">Track delivery status</p>
+                <p class="text-warning">
+                    <%= order._id %>
+                </p>
+            </div>
+            <div class=" status_line d-flex  justify-content-between w-100" data-status="Order Placed">
+                <div class="details d-flex flex-row justify-content-center">
+                    <div class="icon pr-3"><img width="40" height="40"
+                            src="https://img.icons8.com/ios/50/test-passed--v1.png" alt="test-passed--v1" class="img" />
+                    </div>
+                    <div class="pr-3 pb-1 ">
+                        <div class="dot mb-1 "></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="status pr-3">Order Placed</div>
+                </div>
+            </div>
+            <div class=" status_line d-flex  justify-content-between w-100" data-status="Confirmed">
+                <div class="details d-flex flex-row justify-content-center ">
+                    <div class="icon pr-3"><img width="40" height="40"
+                            src="https://img.icons8.com/ios/50/checked-checkbox--v2.png" alt="checked-checkbox--v2"
+                            class="img" /></div>
+                    <div class="pr-3 pb-1">
+                        <div class="dot mb-1 "></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="status pr-3">Order Confirmation</div>
+                </div>
+            </div>
+            <div class=" status_line d-flex  justify-content-between w-100" data-status="Preparation">
+                <div class="details d-flex flex-row justify-content-center  ">
+                    <div class="icon pr-3"><img width="40" height="40"
+                            src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/1A1A1A/external-Confetti-wedding-(outline)-outline-andi-nur-abdillah.png"
+                            alt="external-Confetti-wedding-(outline)-outline-andi-nur-abdillah" class="img" /></div>
+                    <div class="pr-3 pb-1">
+                        <div class="dot mb-1 "></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="status pr-3">Preparation</div>
+                </div>
+            </div>
+            <div class="status_line d-flex  justify-content-between w-100 " data-status="Out for delevary">
+                <div class="details d-flex flex-row justify-content-center  ">
+                    <div class="icon pr-3"><img width="40" height="40"
+                            src="https://img.icons8.com/ios/50/1A1A1A/delivery--v1.png" alt="delivery--v1"
+                            class="img" /></div>
+                    <div class="pr-3 pb-1">
+                        <div class="dot mb-1 "></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="status pr-3">Out for delevary</div>
+                </div>
+            </div>
+            <div class="status_line d-flex  justify-content-between w-100 " data-status="Delivered">
+                <div class="details d-flex flex-row justify-content-center">
+                    <div class="icon pr-3"><img width="40" height="40"
+                            src="https://img.icons8.com/ios/50/1A1A1A/happy--v1.png" alt="happy--v1" class="img" />
+                    </div>
+                    <div class="pr-3 pb-1 ">
+                        <div class="dot mb-1 "></div>
+
+                    </div>
+                    <div class="status pr-3">Delivered</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
