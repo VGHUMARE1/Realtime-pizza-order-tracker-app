@@ -1,11 +1,11 @@
-# Realtime-pizza-order-tracker-app
+#  Realtime-pizza-order-tracker-app
 
-## Installation
+##  Installation
 
 Clone the repository by:
 
-```bash
-# clone the Speech-To-Sign-Language-Converter repo
+``` bash
+# clone the  repo
 git clone https://github.com/VGHUMARE1/Realtime-pizza-order-tracker-app.git
 ```
 
